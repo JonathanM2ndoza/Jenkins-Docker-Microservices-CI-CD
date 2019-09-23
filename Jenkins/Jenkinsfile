@@ -2,4 +2,16 @@ node{
     stage('GitSCM Checkout'){
         git credentialsId: 'git-creds', url: 'https://github.com/JonathanM2ndoza/Jenkins-Docker-Microservices-CI-CD.git'
     }
+
+    stage('Mvn Package'){
+        sh 'mvn -f Api-Customer/pom.xml clean package'
+    }
+
+    stage('Build Docker Image'){
+        def TAG = "2.0"
+        def REGISTRY = "jm2ndoza/api-customer"
+        sh "docker build -t ${REGISTRY}:${TAG} Docker/"
+    }
 }
+
+
