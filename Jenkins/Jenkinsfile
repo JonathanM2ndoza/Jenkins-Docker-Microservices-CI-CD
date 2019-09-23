@@ -1,0 +1,5 @@
+node{
+    stage('GitSCM Checkout'){
+        git credentialsId: 'git-creds', url: 'https://github.com/JonathanM2ndoza/Jenkins-Docker-Microservices-CI-CD.git'
+    }
+}
