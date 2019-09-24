@@ -13,6 +13,8 @@
 
 ![Screenshot](Prtsc/Jenkins-pipeline.png)
 
+![Screenshot](Prtsc/Jenkinsfile.png)
+
 ## 2.- Jenkins Build
 
 ![Screenshot](Prtsc/Jenkins-build.png)
