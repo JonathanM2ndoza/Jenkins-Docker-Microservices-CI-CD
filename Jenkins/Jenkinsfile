@@ -1,17 +1,28 @@
 node{
+    def TAG = "2.0"
+    def REGISTRY = "jm2ndoza/api-customer"
+
     stage('GitSCM Checkout'){
         git credentialsId: 'git-creds', url: 'https://github.com/JonathanM2ndoza/Jenkins-Docker-Microservices-CI-CD.git'
     }
 
     stage('Mvn Package'){
         sh 'mvn -f Api-Customer/pom.xml clean package'
+        sh 'cp Api-Customer/target/api-customer-2.0-SNAPSHOT.jar Docker/'
     }
 
     stage('Build Docker Image'){
-        def TAG = "2.0"
-        def REGISTRY = "jm2ndoza/api-customer"
         sh "docker build -t ${REGISTRY}:${TAG} Docker/"
     }
+
+    stage('Push Docker Image'){
+        withCredentials([string(credentialsId: 'dockerHub-pwd', variable: 'dockerHubPwd')]) {
+            sh "docker login -u jm2ndoza -p ${dockerHubPwd}"
+        }
+        sh "docker push ${REGISTRY}:${TAG}"
+    }
+
+    stage('Run Container on Local Server'){
+        sh "docker run -it -u root -p 8071:8071 --name api-customer -d $REGISTRY:$TAG"
+    }
 }
-
-
