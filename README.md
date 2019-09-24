@@ -13,3 +13,49 @@
 
 ![Screenshot](Prtsc/Jenkins-pipeline.png)
 
+## 2.- Jenkins Build
+
+![Screenshot](Prtsc/Jenkins-build.png)
+
+## 3.- Jenkins Credentials
+
+![Screenshot](Prtsc/Jenkins-Credentials.png)
+
+## 4.- Jenkins Status Console
+
+![Screenshot](Prtsc/Jenkins-console1.png)
+
+![Screenshot](Prtsc/Jenkins-console2.png)
+
+![Screenshot](Prtsc/Jenkins-console3.png)
+
+![Screenshot](Prtsc/Jenkins-console4.png)
+
+## 5.- Docker Hub 
+
+![Screenshot](Prtsc/DockerHub.png)
+
+## 6.- Docker images and container (Local Server)
+
+![Screenshot](Prtsc/docker-images-container.png)
+
+
+## 7.- Postman - Invoking the API 
+
+![Screenshot](Prtsc/postman-create.png)
+
+![Screenshot](Prtsc/postman-get.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
